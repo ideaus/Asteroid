@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Asteroid Defender</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div id="game-container">
+            <!-- Main Menu -->
+            <div id="main-menu" class="screen">
+                <h1>Asteroid Defender</h1>
+                <button id="start-game">Start Game</button>
+                <button id="show-tutorial">Tutorial</button>
+                <button id="show-leaderboard">Leaderboard</button>
+                <button id="show-settings">Settings</button>
+            </div>
+
+            <!-- Game Canvas -->
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- HUD -->
+            <div id="hud" class="hidden">
+                <div id="score-container">Score: <span id="score">0</span></div>
+                <div id="high-score-container">High Score: <span id="highScore">0</span></div>
+                <div id="energy-container">
+                    Energy: <div id="energy-bar">
+                        <div id="energy-level"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pause Menu -->
+            <div id="pause-menu" class="screen hidden">
+                <h2>Game Paused</h2>
+                <button id="resume-game">Resume</button>
+                <button id="restart-game">Restart</button>
+                <button id="quit-to-menu">Quit to Menu</button>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="game-over" class="screen hidden">
+                <h2>Game Over</h2>
+                <div id="final-score"></div>
+                <button id="try-again">Try Again</button>
+                <button id="back-to-menu">Main Menu</button>
+            </div>
+
+            <!-- Tutorial Screen -->
+            <div id="tutorial" class="screen hidden">
+                <h2>How to Play</h2>
+                <div class="tutorial-content">
+                    <p>← → or A/D: Move ship</p>
+                    <p>SPACE or Click: Shoot</p>
+                    <p>P: Pause game</p>
+                    <p>M: Mute sound</p>
+                </div>
+                <button id="close-tutorial">Got it!</button>
+            </div>
+        </div>
+
+        <!-- Load sounds -->
+        <audio id="shoot-sound" src="sounds/shoot.mp3" preload="auto"></audio>
+        <audio id="explosion-sound" src="sounds/explosion.mp3" preload="auto"></audio>
+        <audio id="powerup-sound" src="sounds/powerup.mp3" preload="auto"></audio>
+        <audio id="background-music" src="sounds/background.mp3" loop preload="auto"></audio>
+
+        <!-- Scripts -->
+        <script src="js/config.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/entities.js"></script>
+        <script src="js/effects.js"></script>
+        <script src="js/powerups.js"></script>
+        <script src="js/controls.js"></script>
+        <script src="js/audio.js"></script>
+        <script src="js/game.js"></script>
+    </body>
+
+</html>
